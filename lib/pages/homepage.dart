@@ -11,12 +11,15 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: Color.fromARGB(255, 15, 191, 29),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 15, 191, 29),
         items: [
-          BottomNavigationBarItem(icon: Icon(color: Colors.white,Icons.home), label: "Home",),
           BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner,color: Colors.white),
+            icon: Icon(color: Colors.white, Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.qr_code_scanner, color: Colors.white),
             label: "Scan",
           ),
         ],
@@ -56,7 +59,7 @@ class _HomepageState extends State<Homepage> {
                     Container(
                       height: 50,
                       width: 50,
-                      child: Icon(Icons.share, color: Colors.white),
+                      child: Icon(Icons.person, color: Colors.white),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 15, 191, 29),
                         borderRadius: BorderRadius.circular(20),
@@ -66,9 +69,46 @@ class _HomepageState extends State<Homepage> {
                 ),
                 SizedBox(height: 50),
                 Container(
-                  height: 400,
-                  width: 1000,
-                  color: Color.fromARGB(255, 15, 191, 29),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 222, 222, 222),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                  height: 200,
+                  width: 500,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(50),
+                              ),
+                            ),
+                            height: 150,
+                            width: 150,
+                            child: Image.asset(
+                              "assets/tanaman.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+
+                          SizedBox(width: 10),
+                          Text(
+                            "Kenali Penyakit Tanamanmu!",
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
